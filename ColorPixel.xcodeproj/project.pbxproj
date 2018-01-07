@@ -15,6 +15,7 @@
 		E21725A5200076F6003DF55E /* ImagePixelReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21725A4200076F6003DF55E /* ImagePixelReader.swift */; };
 		E21725AB20007F0E003DF55E /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21725AA20007F0E003DF55E /* CanvasViewModel.swift */; };
 		E21725AD20008077003DF55E /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21725AC20008077003DF55E /* Canvas.swift */; };
+		E2192235200110A2007F5007 /* UIImage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2192234200110A2007F5007 /* UIImage+Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E21725A4200076F6003DF55E /* ImagePixelReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePixelReader.swift; sourceTree = "<group>"; };
 		E21725AA20007F0E003DF55E /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		E21725AC20008077003DF55E /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		E2192234200110A2007F5007 /* UIImage+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				E217259920007548003DF55E /* LaunchScreen.storyboard */,
 				E217259C20007548003DF55E /* Info.plist */,
 				E21725A4200076F6003DF55E /* ImagePixelReader.swift */,
+				E2192234200110A2007F5007 /* UIImage+Extention.swift */,
 			);
 			path = ColorPixel;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2192235200110A2007F5007 /* UIImage+Extention.swift in Sources */,
 				E21725AB20007F0E003DF55E /* CanvasViewModel.swift in Sources */,
 				E21725A5200076F6003DF55E /* ImagePixelReader.swift in Sources */,
 				E217259320007548003DF55E /* ViewController.swift in Sources */,

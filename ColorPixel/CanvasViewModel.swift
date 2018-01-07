@@ -65,19 +65,6 @@ struct CanvasViewModel {
         currentDraw = []
     }
     
-    struct Point: Hashable {
-        let x: Int
-        let y: Int
-        
-        public var hashValue: Int {
-            return "\(x),\(y)".hashValue
-        }
-        
-        public static func ==(lhs: Point, rhs: Point) -> Bool {
-            return lhs.x == rhs.x && lhs.y == rhs.y
-        }
-    }
-    
     mutating func undo() {
         guard let lastDraw = stateHistory.popLast() else { return }
         

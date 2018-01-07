@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        displayImageNamed("b07061daec469c4ae0cfb24fe6d3a5c5--pony-bead-patterns-marvel-perler-bead-patterns-1")
+        displayImageNamed("google_pixel_phone")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,12 +43,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 for y in 0 ..< height{
                     let color = imagePixelReader.colorAt(x: x, y: y)
                     let pixelState = PixelState(x: x, y: y, color: color.uiColor)
+                    print(pixelState)
                     pixelsState.append(pixelState)
                 }
             }
             
             DispatchQueue.main.async {
-                self.pixelView = Canvas(width: width, height: height, pixelSize: 20, pixelsState: pixelsState)
+                self.pixelView = Canvas(x: 0, y: 0, width: width, height: height, pixelSize: 20, pixelsState: pixelsState)
                 self.scrollView.contentSize = self.pixelView!.frame.size
                 self.scrollView.addSubview(self.pixelView!)
                 self.updateZoomSettings(animated: true)
@@ -70,14 +71,21 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scaleHeight = scrollSize.height / contentSize.height,
         scale       = max(scaleWidth, scaleHeight)
         print("\(scaleWidth): \(scaleHeight)")
-        scrollView.minimumZoomScale = scale
-        scrollView.setZoomScale(scale, animated: animated)
+        scrollView.minimumZoomScale = 0.01
+        scrollView.setZoomScale(0.095, animated: animated)
     }
     
     // MARK: - UIScrollViewDelegate
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return pixelView
+    }
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let subView = scrollView.subviews[0] // get the view
+        let offsetX = max(Double(scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5,0.0)
+        let offsetY = max(Double(scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5,0.0)
+        // adjust the center of view
+        subView.center = CGPoint(x: scrollView.contentSize.width * 0.5 + CGFloat(offsetX),y: scrollView.contentSize.height * 0.5 + CGFloat(offsetY))
     }
     
 }
